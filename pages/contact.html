@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Jay's Custom Auto, Conyers GA</title>
+    <meta name="description" content="Contact Jay's Custom Auto in Conyers, GA for modern auto care. Call (678) 361-7517 or visit us at 200 Camden Ind. Pkwy.">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <style>
+        .contact {
+            padding: 100px 0;
+            background-color: #f5f5f5;
+        }
+        
+        .contact-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+        
+        .contact-intro h1 {
+            font-size: 2.5rem;
+            font-weight: 200;
+            color: #2c2c2c;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+        
+        .contact-intro p {
+            font-size: 1.2rem;
+            color: #888888;
+            line-height: 1.7;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 40px;
+        }
+        
+        .contact-info {
+            background-color: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e0e0e0;
+            height: fit-content;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #2c2c2c;
+            margin-bottom: 30px;
+        }
+        
+        .contact-detail {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-detail i {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            color: #888888;
+            min-width: 30px;
+        }
+        
+        .contact-detail strong {
+            display: block;
+            color: #2c2c2c;
+            margin-bottom: 5px;
+            font-weight: 400;
+        }
+        
+        .contact-detail p {
+            color: #666666;
+            margin: 0;
+        }
+        
+        .hours-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+            color: #666666;
+        }
+        
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e0e0e0;
+        }
+        
+        .contact-form h3 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #2c2c2c;
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 300;
+            color: #2c2c2c;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 1rem;
+            background-color: #f5f5f5;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #2c2c2c;
+            background-color: white;
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: #2c2c2c;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 300;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background-color: transparent;
+            color: #2c2c2c;
+            border: 1px solid #2c2c2c;
+        }
+        
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .contact-method {
+            background-color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e0e0e0;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-method:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-method-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #888888;
+        }
+        
+        .contact-method h3 {
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: #2c2c2c;
+            margin-bottom: 10px;
+        }
+        
+        .contact-method p {
+            color: #666666;
+            font-size: 0.95rem;
+        }
+        
+        .map-container {
+            margin-top: 40px;
+            height: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e0e0e0;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 80px 0;
+            background-color: #2c2c2c;
+            color: white;
+        }
+        
+        .cta-section h2 {
+            font-weight: 200;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Jay's Custom Auto</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="contact">
+        <div class="container">
+            <div class="contact-intro">
+                <h1>Let's Talk About Your Car</h1>
+                <p>Ready to experience modern auto care in Conyers, GA? Get in touch to discuss your vehicle's needs and find the right solution for you.</p>
+            </div>
+
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <div class="contact-method-icon">📍</div>
+                    <h3>Visit Our Shop</h3>
+                    <p>200 Camden Ind. Pkwy.<br>Conyers, GA 30012</p>
+                </div>
+                <div class="contact-method">
+                    <div class="contact-method-icon">📞</div>
+                    <h3>Call or Text</h3>
+                    <p>(678) 361-7517<br>Available Mon-Sat</p>
+                </div>
+                <div class="contact-method">
+                    <div class="contact-method-icon">✉️</div>
+                    <h3>Email Us</h3>
+                    <p>jarvis@jayscustomauto.com<br>Quick responses guaranteed</p>
+                </div>
+            </div>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Visit Us in Conyers</h3>
+                    
+                    <div class="contact-detail">
+                        <i>📍</i>
+                        <div>
+                            <strong>Address</strong>
+                            <p>200 Camden Ind. Pkwy.<br>Conyers, GA 30012</p>
+                            <p><em>Conveniently located near downtown Conyers</em></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <i>📞</i>
+                        <div>
+                            <strong>Phone & Text</strong>
+                            <p>(678) 361-7517</p>
+                            <p><em>Call, text, or email - whatever works for you</em></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <i>✉️</i>
+                        <div>
+                            <strong>Email</strong>
+                            <p>jarvis@jayscustomauto.com</p>
+                            <p><em>Quick responses to all inquiries</em></p>
+                        </div>
+                    </div>
+                    
+                    <h3>Hours</h3>
+                    <ul class="hours-list">
+                        <li><span>Monday-Friday</span> <span>8:00 AM - 6:00 PM</span></li>
+                        <li><span>Saturday</span> <span>9:00 AM - 4:00 PM</span></li>
+                        <li><span>Sunday</span> <span>Closed</span></li>
+                    </ul>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Your name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(678) 361-7517">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Interest</label>
+                            <select id="service" name="service">
+                                <option value="">Choose a service</option>
+                                <option value="maintenance">Routine Maintenance</option>
+                                <option value="repair">Repairs</option>
+                                <option value="performance">Performance Upgrades</option>
+                                <option value="diagnostic">Diagnostic Service</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Tell Us About Your Vehicle *</label>
+                            <textarea id="message" name="message" required placeholder="What's going on with your vehicle? Any specific concerns or questions?"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.1234567890!2d-84.0176!3d33.6637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDM5JzQ5LjUiTiA4NMKwMDEnMDMuNCJX!5e0!3m2!1sen!2sus!4v1234567890"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Contact us today to schedule your service or get answers to your questions. We're here to help keep your vehicle running smoothly in Conyers, GA.</p>
+            <a href="tel:6783617517" class="cta-button">Call (678) 361-7517</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Jay's Custom Auto</h3>
+                    <p>Modern auto care in Conyers, GA. Expert service with transparent pricing and family-focused attention to detail.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>200 Camden Ind. Pkwy.<br>Conyers, GA 30012</p>
+                    <p>(678) 361-7517</p>
+                    <p>jarvis@jayscustomauto.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hours</h3>
+                    <p>Mon-Fri: 8:00 AM - 6:00 PM</p>
+                    <p>Sat: 9:00 AM - 4:00 PM</p>
+                    <p>Sun: Closed</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Jay's Custom Auto, Conyers GA</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Simple validation
+            if (!name || !email || !message) {
+                alert('Please fill in your name, email, and message so we can respond to you.');
+                return;
+            }
+            
+            // Success message
+            alert(`Thanks for reaching out, ${name}! We'll get back to you as soon as possible - usually within a few hours.`);
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>
