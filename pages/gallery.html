@@ -3,169 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery - Modern Auto Work in Conyers, GA</title>
-    <meta name="description" content="See our latest work - from routine maintenance to custom modifications. Modern automotive service in Conyers, GA.">
+    <title>Gallery - Classic and Modern Auto Work in Conyers, GA</title>
+    <meta name="description" content="Explore our collection of classic and modern automotive work. From vintage restorations to modern upgrades in Conyers, GA.">
     <link rel="stylesheet" href="../css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
     <style>
         .gallery {
             padding: 100px 0;
-            background-color: #f5f5f5;
+            background: url('../images/car.jpg') center/cover fixed;
+            position: relative;
         }
-        
+
         .gallery-intro {
             text-align: center;
             max-width: 800px;
             margin: 0 auto 60px;
+            padding: 0 20px;
         }
-        
+
         .gallery-intro h1 {
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 5vw, 2.5rem);
             font-weight: 200;
-            color: #2c2c2c;
+            color: #ffffff;
             margin-bottom: 20px;
             letter-spacing: -0.5px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
         }
-        
+
         .gallery-intro p {
-            font-size: 1.2rem;
-            color: #888888;
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            color: #e0e0e0;
             line-height: 1.7;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
         }
-        
+
         .gallery-filters {
             text-align: center;
             margin-bottom: 50px;
+            padding: 0 20px;
         }
-        
+
         .filter-button {
-            background-color: white;
-            border: 1px solid #e0e0e0;
-            color: #666666;
-            padding: 10px 25px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            padding: 12px 30px;
             margin: 5px;
             border-radius: 25px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: 300;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
         }
-        
+
         .filter-button:hover,
         .filter-button.active {
-            background-color: #2c2c2c;
-            color: white;
-            border-color: #2c2c2c;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
         }
-        
+
+        .category-section {
+            margin-bottom: 80px;
+        }
+
+        .category-title {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 0 20px;
+        }
+
+        .category-title h2 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 200;
+            color: #ffffff;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .category-title p {
+            color: #e0e0e0;
+            line-height: 1.6;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
+        }
+
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
             margin-top: 40px;
+            padding: 0 20px;
         }
-        
+
         .gallery-item {
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
-            border: 1px solid #e0e0e0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
-        
+
         .gallery-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.3);
         }
-        
+
         .gallery-image {
-            height: 250px;
+            height: 200px;
             overflow: hidden;
             position: relative;
         }
-        
+
         .gallery-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.3s ease;
         }
-        
+
         .gallery-item:hover .gallery-image img {
             transform: scale(1.05);
         }
-        
+
         .gallery-content {
-            padding: 30px;
+            padding: 25px;
         }
-        
+
         .gallery-content h3 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 300;
-            color: #2c2c2c;
+            color: #ffffff;
             margin-bottom: 15px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
         }
-        
+
         .project-story {
-            color: #666666;
+            color: #e0e0e0;
             line-height: 1.7;
             margin-bottom: 20px;
+            font-size: 0.95rem;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
         }
-        
+
         .project-details {
-            background-color: #f5f5f5;
+            background-color: rgba(255, 255, 255, 0.1);
             padding: 20px;
             border-radius: 15px;
             margin: 20px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         .project-details h4 {
             font-weight: 300;
-            color: #2c2c2c;
+            color: #ffffff;
             margin-bottom: 10px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
         }
-        
+
         .project-details ul {
             list-style: none;
             padding: 0;
         }
-        
+
         .project-details li {
             padding: 5px 0;
-            color: #666666;
+            color: #e0e0e0;
+            font-size: 0.9rem;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
         }
-        
+
         .project-details li::before {
             content: "→";
-            color: #888888;
+            color: #e0e0e0;
             margin-right: 5px;
         }
-        
-        .category-section {
-            margin-bottom: 80px;
-        }
-        
-        .category-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .category-title h2 {
-            font-size: 2rem;
-            font-weight: 200;
-            color: #2c2c2c;
-            margin-bottom: 10px;
-        }
-        
-        .category-title p {
-            color: #888888;
-            line-height: 1.6;
-        }
-        
+
+        /* Mobile Optimizations */
         @media (max-width: 768px) {
+            .gallery {
+                padding: 80px 0;
+                background-attachment: scroll;
+            }
+
             .gallery-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 0 15px;
             }
+
+            .gallery-intro, .gallery-filters, .category-title {
+                padding: 0 15px;
+            }
+
+            .filter-button {
+                display: block;
+                width: 100%;
+                margin: 5px 0;
+                padding: 15px;
+            }
+
+            .gallery-image {
+                height: 180px;
+            }
+
+            .gallery-content {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                padding: 60px 0;
+            }
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(44, 44, 44, 0.9) 0%, rgba(26, 26, 26, 0.9) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .cta-section h2 {
+            font-size: clamp(1.8rem, 4vw, 2.2rem);
+            font-weight: 200;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .cta-section p {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            color: #e0e0e0;
+            margin-bottom: 30px;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 300;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .cta-button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
         }
     </style>
 </head>
@@ -188,8 +287,8 @@
     <section class="gallery">
         <div class="container">
             <div class="gallery-intro">
-                <h1>Modern Auto Work Gallery</h1>
-                <p>Explore our recent work showcasing modern automotive service in Conyers, GA. From routine maintenance to custom projects, each reflects our commitment to quality and attention to detail.</p>
+                <h1>Classic and Modern Auto Work Gallery</h1>
+                <p>Explore our collection of classic and modern automotive work. From vintage restorations to modern upgrades in Conyers, GA. Each project reflects our passion for automotive excellence and commitment to keeping your vehicle running beautifully.</p>
             </div>
 
             <div class="gallery-filters">
@@ -197,30 +296,31 @@
                 <button class="filter-button" data-filter="maintenance">Maintenance</button>
                 <button class="filter-button" data-filter="custom">Custom Work</button>
                 <button class="filter-button" data-filter="repair">Repairs</button>
+                <button class="filter-button" data-filter="classic">Classic Cars</button>
             </div>
 
             <div class="category-section">
                 <div class="category-title">
                     <h2>Recent Projects</h2>
-                    <p>Quality work that keeps Conyers drivers moving safely and reliably.</p>
+                    <p>Quality work that keeps Conyers drivers moving safely and reliably, from classic restorations to modern performance upgrades.</p>
                 </div>
 
                 <div class="gallery-grid">
-                    <div class="gallery-item" data-category="maintenance">
+                    <div class="gallery-item" data-category="classic">
                         <div class="gallery-image">
-                            <img src="../images/IMG_4621.JPG" alt="Modern maintenance service in Conyers, GA">
+                            <img src="../images/IMG_4621.JPG" alt="Classic car restoration in Conyers, GA">
                         </div>
                         <div class="gallery-content">
-                            <h3>Comprehensive Maintenance Service</h3>
-                            <p class="project-story">Complete service for a family SUV including oil change, brake inspection, and fluid checks. Modern diagnostic tools ensure every system operates at peak performance.</p>
+                            <h3>Classic Car Restoration</h3>
+                            <p class="project-story">Complete restoration of a vintage muscle car including engine rebuild, bodywork, and interior refurbishment. Modern reliability meets classic style.</p>
                             
                             <div class="project-details">
-                                <h4>Services Completed</h4>
+                                <h4>Restoration Details</h4>
                                 <ul>
-                                    <li>Full synthetic oil change</li>
-                                    <li>Brake system inspection</li>
-                                    <li>Fluid level check and top-off</li>
-                                    <li>Tire pressure adjustment</li>
+                                    <li>Engine rebuild and tuning</li>
+                                    <li>Bodywork and paint</li>
+                                    <li>Interior refurbishment</li>
+                                    <li>Modern safety upgrades</li>
                                 </ul>
                             </div>
                         </div>
@@ -286,27 +386,27 @@
                         </div>
                     </div>
 
-                    <div class="gallery-item" data-category="custom">
+                    <div class="gallery-item" data-category="classic">
                         <div class="gallery-image">
-                            <img src="../images/IMG_4625.JPG" alt="Technology upgrade in Conyers, GA">
+                            <img src="../images/IMG_4625.JPG" alt="Vintage car service in Conyers, GA">
                         </div>
                         <div class="gallery-content">
-                            <h3>Technology Integration</h3>
-                            <p class="project-story">Modern technology upgrade including backup camera installation and smartphone integration. Enhanced convenience and safety features for daily driving.</p>
+                            <h3>Vintage Car Care</h3>
+                            <p class="project-story">Specialized care for a classic American muscle car including carburetor tuning, electrical system updates, and period-correct modifications.</p>
                             
                             <div class="project-details">
-                                <h4>Technology Added</h4>
+                                <h4>Classic Services</h4>
                                 <ul>
-                                    <li>Backup camera installation</li>
-                                    <li>Bluetooth connectivity</li>
-                                    <li>USB charging ports</li>
-                                    <li>System testing</li>
+                                    <li>Carburetor tuning and rebuild</li>
+                                    <li>Electrical system updates</li>
+                                    <li>Period-correct parts sourcing</li>
+                                    <li>Performance optimization</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <div class="gallery-item" data-category="repair">
+                    <div class="gallery-item" data-category="maintenance">
                         <div class="gallery-image">
                             <img src="../images/IMG_4626.JPG" alt="Cooling system service in Conyers, GA">
                         </div>
@@ -330,9 +430,9 @@
         </div>
     </section>
 
-    <section class="cta-section" style="background-color: #2c2c2c; color: white; padding: 80px 0; text-align: center;">
+    <section class="cta-section">
         <div class="container">
-            <h2 style="font-weight: 200;">Ready to See Your Vehicle Transformed?</h2>
+            <h2>Ready to See Your Vehicle Transformed?</h2>
             <p>Let's discuss your vehicle's needs and create a service plan that works for you in Conyers, GA.</p>
             <a href="contact.html" class="cta-button">Schedule Your Service</a>
         </div>
@@ -343,7 +443,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Jay's Custom Auto</h3>
-                    <p>Modern auto care in Conyers, GA. Expert service with transparent pricing and family-focused attention to detail.</p>
+                    <p>Classic and modern auto care in Conyers, GA. Expert service with transparent pricing and family-focused attention to detail.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
@@ -391,13 +491,37 @@
                 galleryItems.forEach(item => {
                     if (filter === 'all' || item.getAttribute('data-category').includes(filter)) {
                         item.style.display = 'block';
+                        item.style.animation = 'fadeIn 0.5s ease-in-out';
                     } else {
                         item.style.display = 'none';
                     }
                 });
             });
         });
+
+        // Add fade-in animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Smooth scroll for better mobile experience
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
-</
